@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/crowdsourced/',
+  base: '/crowdsourced-frontend/',
   plugins: [react()],
   server: {
     host: true, // Allow external connections
