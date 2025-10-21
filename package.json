@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/mohxinmuhammad/crowdsourced-frontend",
+  "homepage": "https://github.com/mohxinmuhammad/crowdsourced",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
