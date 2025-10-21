@@ -64,59 +64,267 @@
   transform: translateY(-1px);
 }
 
-/* Hero Section with Background Image */
-.hero {
-  position: relative;
-  padding: 0;
-  height: 50vh;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 1rem;
-  margin-top: 1rem;
+/* Daily Challenge Section */
+.daily-challenge {
+  padding: 4rem 0;
+  background: #f8fafc;
 }
 
-.hero-background {
+.challenge-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.challenge-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.challenge-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.three-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.challenge-column {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.challenge-column:hover {
+  transform: translateY(-5px);
+}
+
+/* Background colors for each column */
+.image-bg-column {
+  background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
+}
+
+.input-column {
+  background: linear-gradient(135deg, #fafaf9 0%, #f3f2f1 100%);
+}
+
+.answers-column {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Image Background Card */
+.image-background-card {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.image-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
-.hero-background::before {
+.image-background::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
-.hero-container {
+.word-overlay {
   position: relative;
   z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 2rem;
+  color: white;
 }
 
-.hero-word {
-  font-size: 5rem;
+.word-overlay .challenge-title {
+  font-size: 3rem;
   font-weight: 900;
   color: white;
   margin: 0;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   letter-spacing: -0.02em;
   line-height: 1;
+}
+
+.word-overlay .challenge-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.challenge-card {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.challenge-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.challenge-description {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.challenge-image {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.challenge-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Scrollable Answers Section */
+.scrollable-answers {
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.answers-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 400px;
+  padding-right: 0.5rem;
+}
+
+.answers-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.answers-scroll-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.answers-scroll-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.answers-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.answer-item {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.answer-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.answer-item.first-place {
+  border-color: #fbbf24;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.answer-item.second-place {
+  border-color: #d1d5db;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+.answer-item.third-place {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 100%);
+}
+
+.answer-item .answer-rank {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.answer-item .answer-rank svg {
+  color: #fbbf24;
+}
+
+.answer-item .answer-rank .rank-number {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.answer-item .answer-content p {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.answer-item .answer-author {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: right;
 }
 
 /* Google Ad Sections */
@@ -447,6 +655,148 @@
   text-align: right;
 }
 
+/* Archive Section */
+.archive-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.archive-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.archive-item {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  border-left: 4px solid #7c3aed;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.archive-date {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #7c3aed;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.archive-challenge {
+  margin-bottom: 2rem;
+}
+
+.challenge-type-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.word-badge {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.phrase-badge {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.image-badge {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.challenge-content {
+  margin-bottom: 1.5rem;
+}
+
+.challenge-content .challenge-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.challenge-content .challenge-image {
+  margin: 0;
+}
+
+.challenge-content .challenge-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.archive-top-answers h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.archive-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.archive-answer {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid #e2e8f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.archive-answer.first {
+  border-left-color: #fbbf24;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.archive-answer.second {
+  border-left-color: #d1d5db;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+.archive-answer.third {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 100%);
+}
+
+.archive-answer .answer-rank {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #374151;
+  min-width: 2rem;
+}
+
+.archive-answer .answer-text {
+  flex: 1;
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.archive-answer .answer-author {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
 /* Footer */
 .footer {
   background: #1e293b;
@@ -492,40 +842,54 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #334155;
-  padding-top: 1rem;
+  /* border-top: 1px solid #334155; */
+  /* padding-top: 1rem; */
   text-align: center;
   color: #94a3b8;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero {
-    height: 40vh;
-    width: 95%;
-    margin-top: 1rem;
-  }
-  
-  .hero-word {
-    font-size: 3.5rem;
-  }
-  
-  .sections-wrapper {
+  .three-column-layout {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1rem;
   }
   
-  .submission-section {
-    height: 40vh;
+  .challenge-header h1 {
+    font-size: 2rem;
   }
   
-  .ad-section {
-    height: 30vh;
+  .challenge-card {
+    padding: 1.5rem;
   }
   
-  .ad-section-full {
-    margin-top: 1.5rem;
+  .challenge-title {
+    font-size: 1.25rem;
+  }
+  
+  .word-overlay .challenge-title {
+    font-size: 2.5rem;
+  }
+  
+  .image-background-card {
+    min-height: 300px;
+  }
+  
+  .scrollable-answers {
+    min-height: 300px;
+  }
+  
+  .answers-scroll-container {
+    max-height: 250px;
+  }
+  
+  .archive-timeline {
+    padding: 0 1rem;
+  }
+  
+  .archive-item {
+    padding: 1.5rem;
   }
   
   .nav-container {
@@ -536,48 +900,50 @@
     padding: 0 1rem;
   }
   
-  .submission-card {
-    padding: 1.5rem;
-  }
-  
   .answers-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .hero {
-    height: 35vh;
-    width: 95%;
-    /* margin-top: 1rem; */
+  .challenge-header h1 {
+    font-size: 1.75rem;
   }
   
-  .hero-word {
-    font-size: 2.5rem;
-  }
-  
-  .sections-wrapper {
-    gap: 1rem;
-    padding: 0 0.5rem;
-  }
-  
-  .submission-section {
-    height: 35vh;
-  }
-  
-  .ad-section {
-    height: 25vh;
-  }
-  
-  .ad-section-full {
-    margin-top: 1rem;
-  }
-  
-  .submission-card {
+  .challenge-card {
     padding: 1rem;
   }
   
-  .submission-card h2 {
-    font-size: 1.5rem;
+  .challenge-title {
+    font-size: 1.125rem;
+  }
+  
+  .word-overlay .challenge-title {
+    font-size: 2rem;
+  }
+  
+  .image-background-card {
+    min-height: 250px;
+  }
+  
+  .scrollable-answers {
+    min-height: 250px;
+  }
+  
+  .answers-scroll-container {
+    max-height: 200px;
+  }
+  
+  .archive-item {
+    padding: 1rem;
+  }
+  
+  .archive-answer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .archive-answer .answer-rank {
+    min-width: auto;
   }
 }
